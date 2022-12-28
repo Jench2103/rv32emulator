@@ -1,0 +1,15 @@
+# test binv rd, rs1, rs2
+
+main:
+
+# invert bit5 of x29 (0-indexed)
+addi x28, x0, 5
+
+# load 1000 0011 0100 into x29 (and sign-extension)
+addi x29, x0, 2100
+
+binv x30, x29, x28
+
+
+
+hcf

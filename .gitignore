@@ -1,3 +1,4 @@
-*.c
-obj
-.*.sw?
+obj/
+output/
+
+.DS_Store

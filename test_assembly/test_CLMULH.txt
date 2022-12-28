@@ -1,0 +1,29 @@
+## RV32 Emulator Testing Assembly Code
+## CLMULH: 	let rs1_val = X(rs1);
+##		let rs2_val = X(rs2);
+##		let output : xlenbits = 0;
+##		foreach (i from 1 to xlen by 1) {
+##		   output = if   ((rs2_val >> i) & 1)
+##		            then output ^ (rs1_val >> (xlen - i));
+##		            else output;
+##		}
+##		X[rd] = output
+## Synopsis: 	Carry-less multiply (high-part)
+## Description:	clmulh produces the upper half of the 2·XLEN carry-less product.
+
+main:
+## test clmulh (-1)clmulh(1) = ffffffff clmulh 000000001 = 00000000
+addi x28,x0 ,-1
+addi x29,x0 ,1
+clmulh x30,x28,x29
+
+## test clmulh (-1)clmulh(3) = ffffffff clmulh 000000003 = 00000001
+addi x28,x0 ,-1
+addi x29,x0 ,3
+clmulh x30,x28,x29
+
+## test clmulh (-1)clmulh(7) = ffffffff clmulh 000000001 = 00000002
+addi x28,x0 ,-1
+addi x29,x0 ,7
+clmulh x30,x28,x29
+hcf

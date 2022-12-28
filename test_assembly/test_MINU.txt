@@ -1,0 +1,12 @@
+## RV32 Emulator Testing Assembly Code for MINU function
+
+main:
+addi    x21, x0, 597
+addi    x22, x0, 388
+minu    x23, x21, x22
+
+addi    x24, x0, -999
+addi    x25, x0, 100
+minu    x26, x24, x25
+
+hcf

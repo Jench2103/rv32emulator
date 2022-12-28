@@ -1,0 +1,16 @@
+# test sext.h rd, rs
+
+main:
+# laod 1001 0110 1010 0100
+lui     x28, 9
+addi    x28, x28, 1700
+sext.h  x29, x28
+
+addi    x30, x0, 1700
+sext.h  x31, x30
+
+lui     x26, 0x97
+addi    x26, x26, 879
+sext.h  x27, x26
+
+hcf

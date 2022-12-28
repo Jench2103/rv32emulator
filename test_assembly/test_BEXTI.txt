@@ -1,0 +1,10 @@
+## RV32 Emulator Testing Assembly Code for BEXTI function
+
+main:
+addi    x21, x0, 597
+bexti   x22, x21, 0
+bexti   x23, x21, 2
+bexti   x24, x21, 5
+bexti   x25, x21, 9
+
+hcf

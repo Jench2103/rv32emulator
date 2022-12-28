@@ -1,0 +1,12 @@
+## RV32 Emulator Testing Assembly Code for ROR function
+
+main:
+addi    x21, x0, 597
+
+addi    x22, x0, 3
+ror     x23, x21, x22
+
+addi    x24, x0, 4
+ror     x25, x21, x24
+
+hcf

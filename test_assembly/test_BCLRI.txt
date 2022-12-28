@@ -1,0 +1,9 @@
+## RV32 Emulator Testing Assembly Code
+
+## test bclr (-1)binvi(31) = ffffffff & ~(80000000) = 7fffffff
+main:
+addi x28,x0 ,-1
+bclri x30,x28,31
+bclri x30,x28,8
+bclri x30,x28,14
+hcf

@@ -1,0 +1,26 @@
+## RV32 Emulator Testing Assembly Code
+## MAX: 	X(rd) = ((signed)X(rs1) < (signed)X(rs2)) ? X(rs2) : X(rs1) ;
+## Synopsis: 	Maximum
+## Description:	This instruction returns the larger of two signed integers.
+
+main:
+## test max 2<3 => 3  
+addi x28,x0 ,2
+addi x29,x0 ,3
+max  x30,x28,x29
+
+## test max 3>2 => 3  
+addi x28,x0 ,3
+addi x29,x0 ,2
+max  x30,x28,x29
+
+## test max -2<2 => 2  
+addi x28,x0 ,-2
+addi x29,x0 ,2
+max  x30,x28,x29
+
+## test max -3<-2 => -2  
+addi x28,x0 ,-3
+addi x29,x0 ,-2
+max  x30,x28,x29
+hcf

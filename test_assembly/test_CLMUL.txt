@@ -1,0 +1,14 @@
+## testing instruction clmul rd, rs1, rs2.
+
+# load 0010 0100 1101 0110 1111 0000 (24d6f0)
+lui x28, 589
+addi x28, x28, 1776
+
+# load 0100 1110 1101 (4ed)
+addi x29, x0, 1261
+
+clmul x30, x29, x28
+
+hcf
+
+

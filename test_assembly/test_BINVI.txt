@@ -1,0 +1,19 @@
+## RV32 Emulator Testing Assembly Code
+## BINVI:	let index = shamt & (XLEN - 1);
+##		X(rd) = X(rs1) ^ (1 << index)
+## Synopsis:	Single-Bit Invert (Immediate)
+## Description:	This instruction returns rs1 with a single bit inverted at the index specified in shamt. The index is read from the lower log2(XLEN) bits of shamt. For RV32, the encodings corresponding to shamt[5]=1 are reserved.
+
+main:
+## test binvi (-1)binvi(2) = ffffffff ^ (00000004) = fffffffb
+addi    x28, x0, -1
+binvi   x30, x28, 2
+
+## test binvi (-1)binvi(31) = ffffffff ^ (80000000) = 7fffffff
+addi    x28, x0, -1
+binvi   x30, x28, 31
+
+## test binvi (-1)binvi(0) = ffffffff ^ (00000001) = fffffffe
+addi    x28, x0, -1
+binvi   x30, x28, 0
+hcf

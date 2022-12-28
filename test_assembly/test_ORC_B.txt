@@ -1,0 +1,10 @@
+# test orc.b rd, rs
+main:
+# load 5C006DF5
+# load 5C007
+
+lui x28, 376839
+addi x28, x28, 3573
+orc.b x30, x28
+
+hcf

@@ -1,0 +1,11 @@
+## RV32 Emulator Testing Assembly Code for ZEXT_H function
+
+main:
+lui     x21, 59
+addi    x21, x21, 72
+zext.h  x22, x21
+
+addi    x23, x0, -8
+zext.h  x24, x23
+
+hcf

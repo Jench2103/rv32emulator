@@ -1,0 +1,16 @@
+## RV32 Emulator Testing Assembly Code
+## SH1ADD: 	X(rd) = (X(rs1) << 1) + X(rs2);
+## Synopsis:	Shift left by 1 and add
+## Description:	This instruction shifts rs1 to the left by 1 bit and adds it to rs2.
+
+main:
+## test sh1add (-1)sh1add(1) = ffffffff<<1 + 00000001 = ffffffff
+addi x28,x0 ,-1
+addi x29,x0 ,1
+sh1add x30,x28,x29
+
+## test sh1add (2)sh1add(1) = 00000002<<1 + 00000001 = 00000005
+addi x28,x0 ,2
+addi x29,x0 ,1
+sh1add x30,x28,x29
+hcf

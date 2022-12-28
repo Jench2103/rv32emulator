@@ -1,0 +1,15 @@
+## RV32 Emulator Testing Assembly Code for SEXT_B function
+
+main:
+addi    x21, x0, 144
+sext.b  x22, x21
+
+addi    x23, x0, 2300
+addi    x23, x23, 17
+sext.b  x24, x23
+
+addi    x25, x0, 2300
+addi    x25, x25, 132
+sext.b  x26, x25
+
+hcf

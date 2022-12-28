@@ -1,0 +1,23 @@
+## test ctz rd,rs
+main:
+# 128 --> 7
+addi x28, x0, 128
+ctz  x30, x28
+
+# 64 --> 6
+addi x28, x0, 64
+ctz  x30, x28
+
+# 16 --> 4
+addi x28, x0, 16
+ctz  x30, x28
+
+# 2 --> 1
+addi x28, x0, 2
+ctz  x30, x28
+
+# 1024 --> 10
+addi x28, x0, 1024
+ctz  x30, x28
+
+hcf

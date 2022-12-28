@@ -1,0 +1,26 @@
+## RV32 Emulator Testing Assembly Code
+## ORN: 	X(rd) = X(rs1) | ~X(rs2);
+## Synopsis:	OR with inverted operand
+## Description:	This instruction performs the bitwise logical OR operation between rs1 and the bitwise inversion of rs2.
+
+main:
+## test orn (-1)orn(0) = ffffffff | ~(00000000) = ffffffff
+addi x28,x0 ,-1
+addi x29,x0 ,0
+orn  x30,x28,x29
+
+## test orn (-1)orn(-1) = ffffffff | ~(ffffffff) = ffffffff 
+addi x28,x0 ,-1
+addi x29,x0 ,-1
+orn  x30,x28,x29
+
+## test orn (0)orn(-1) = 00000000 | ~(ffffffff) = 00000000 
+addi x28,x0 ,0
+addi x29,x0 ,-1
+orn  x30,x28,x29
+
+## test orn (0)orn(0) = 00000000 | ~(00000000) = ffffffff 
+addi x28,x0 ,0
+addi x29,x0 ,0
+orn  x30,x28,x29
+hcf

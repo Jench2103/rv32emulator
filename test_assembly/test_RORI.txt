@@ -1,0 +1,11 @@
+# test rori rd, rs1, shamt
+
+main:
+
+addi x28, x0, 2389
+rori x30, x28, 4
+rori x30, x28, 6
+rori x30, x28, 5
+
+
+hcf

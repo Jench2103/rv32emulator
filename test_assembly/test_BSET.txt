@@ -1,0 +1,7 @@
+## RV32 Emulator Testing Assembly Code
+
+main:
+li   x28, 32 
+li   x29, 1
+bset x30, x28, x29
+hcf

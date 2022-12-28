@@ -1,0 +1,31 @@
+## test clz rd,rs
+main:
+# 128 --> 24
+addi x28, x0, 128
+clz  x30, x28
+
+# 64 --> 25
+addi x28, x0, 64
+clz  x30, x28
+
+# 16 --> 27
+addi x28, x0, 16
+clz  x30, x28
+
+# 2 --> 30
+addi x28, x0, 2
+clz  x30, x28
+
+# 1024 --> 21
+addi x28, x0, 1024
+clz  x30, x28
+
+# 183 --> 24
+addi x28, x0, 183
+clz  x30, x28
+
+# 100 --> 25
+addi x28, x0, 100
+clz  x30, x28
+
+hcf

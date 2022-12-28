@@ -1,0 +1,8 @@
+## RV32 Emulator Testing Assembly Code for ANDN function
+
+main:
+addi    x21, x0, 37
+addi    x22, x0, 211
+andn    x23, x21, x22
+
+hcf
